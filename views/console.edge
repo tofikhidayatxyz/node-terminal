@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Console Provider</title>
+    <style>
+        html , body {
+            overflow-y: hidden !important;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .terminal {
+            height: 100vh
+        }
+        .floatingbar {
+            position: fixed;
+            top: 0;
+            z-index: 999999999;
+            right:0;
+        }
+        .floatingbar a {
+            padding: 5px;
+            background-color: #fff;
+            opacity: .5;
+            display: block;
+        }
+        .floatingbar a:hover {
+            opacity: 1 !important;
+        }
+        .floatingbar a img {
+            height: 20px;
+            display: flex;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="floatingbar">
+        <a href="/logout">
+            <img src="/images/close.svg" alt="">
+        </a>
+    </div>
+</body>
+<script src="/js/gritty.js"></script>
+<script>
+const options = {
+        command: 'bash', 
+        autoRestart: true,
+        cwd: '{{ path }}',
+        env: {
+            TERMINAL: 'gritty',
+        },
+    };
+    gritty('body', options); 
+    </script>
+</html>

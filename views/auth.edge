@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Console Provider</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .card-auth {
+            max-width: 420px;
+            width: 100%;
+        }
+        body {
+           background-color: #DAE0ED
+        }
+        .card-header {
+            background-image: url(/images/bg.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .font-weight-semi-bold {
+            font-weight: 550;
+        }
+        .shadow {
+            box-shadow: 0 0 30px 0 rgba(0,0,0,.05) !important;
+        }
+    </style>
+<body>
+    <div class="container">
+        <div class="card-auth">
+            @if(err)
+            <div class="alert alert-danger shadow">
+                <p class="mb-0">Invalid credential or password</p>
+            </div>
+            @endif
+            
+            <div class=" card mx-auto shadow">
+                <div class="card-header">
+                    <h5 class="mb-0 font-weight-bold text-white">Login Console</h5>
+                </div>
+                <div class="card-body">
+                        <form action="/" method="post">
+                            <div class="form-group">
+                                <label for="credential" class="col-form-label text-secondary font-weight-semi-bold">Credential</label>
+                                <input type="text" required class="form-control form-control-lg" id="credential" name="credential" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-form-label text-secondary font-weight-semi-bold">Password</label>
+                                <input type="password" required class="form-control form-control-lg" id="password" name="password" autocomplete="off">
+                            </div>
+                            <div class="w-100 clearfix pt-2">
+                                <div class="float-right">
+                                    <button class="btn btn-primary px-4">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+            </div>
+    </div>
+</body>
+</html>
