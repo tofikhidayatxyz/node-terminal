@@ -15,7 +15,7 @@
     "express": "^4.17.1",
     "express-edge": "^2.0.1",
     "gritty": "^4.8.5",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.5.0",
     "url": "^0.11.0"
   },
   "keywords": [],
